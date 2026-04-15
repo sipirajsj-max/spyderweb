@@ -1,0 +1,306 @@
+/*==============================================================================
+   1. General Reset & Body (Consistency with Home Page)
+==============================================================================*/
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: #fdfeff ;
+    background-image: url('/IMAGES/spder.png'); /* Check path: images/imgbg.png */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, sans-serif; /* Reader-friendly font */
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: -1;
+}
+
+/*==============================================================================
+   2. Header & Navigation (Logo Left, Menu Right - Fixed)
+==============================================================================*/
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 60px;
+    background: rgba(11, 19, 26, 0.9);
+    border-bottom: 1px solid #37474f;
+    backdrop-filter: blur(10px);
+    position: fixed; width: 100%; top: 0; z-index: 1000;
+}
+
+.logo-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px; font-weight: bold;
+    color: #84dbff;
+    text-shadow: 0 0 10px #84dbff;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    margin-right: auto;
+}
+
+nav ul { display: flex; list-style: none; gap: 25px; }
+nav ul li a {
+    text-decoration: none;
+    color: #cfd8dc;
+    font-size: 13px;
+    transition: 0.3s ease;
+    padding-bottom: 5px;
+}
+
+nav ul li a:hover, nav ul li a.active-nav {
+    color: #84dbff;
+    text-shadow: 0 0 5px #84dbff;
+    border-bottom: 2px solid #84dbff;
+}
+
+/*==============================================================================
+   3. Main About Us Area & Content Sections
+==============================================================================*/
+.about-container {
+    padding: 150px 80px 50px 80px; /* Space for fixed header */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #84dbff;
+    text-shadow: 0 0 10px #84dbff;
+}
+
+.about-subtitle {
+    font-size: 16px;
+    margin-bottom: 60px;
+    text-align: center;
+    color: #cfd8dc;
+    letter-spacing: 1px;
+}
+
+/* Language Content (Hidden by Default) */
+.lang-content { display: none; }
+.lang-content.active { display: block; }
+
+/* About Cards Grid */
+.about-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 50px;
+    align-items: flex-start;
+}
+
+/* Base Card Style */
+.about-card, .about-full-card {
+    background: rgba(25, 35, 45, 0.8);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #445566;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
+    transition: 0.3s ease;
+}
+
+.about-card:hover, .about-full-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(132, 219, 255, 0.3);
+}
+
+.about-card h2, .about-full-card h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #84dbff;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.about-card p, .about-full-card p {
+    line-height: 1.7;
+    color: #cfd8dc;
+    font-size: 15px;
+}
+
+/* Card Specifics */
+.founder-card, .purpose-card { width: 32%; }
+.services-card {
+    width: 32%;
+    display: flex; flex-direction: column; gap: 20px;
+    padding: 30px;
+}
+
+.service-item {
+    background: rgba(132, 219, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(132, 219, 255, 0.2);
+    text-align: center;
+}
+
+.service-item .icon { font-size: 30px; display: block; margin-bottom: 10px; }
+.service-item h3 { margin-bottom: 5px; color: white; font-size: 16px; }
+.service-item p { font-size: 13px; line-height: 1.5; }
+
+/* Full Width Cards */
+.about-full-card { margin-bottom: 30px; }
+.why-us-card h2 { color: white; border-left: 5px solid #1565c0; padding-left: 15px; }
+
+/* Contact Specifics */
+.contact-list {
+    list-style: none;
+    margin-top: 25px;
+    color: #cfd8dc;
+}
+
+.contact-list li { margin-bottom: 10px; font-size: 15px; }
+.contact-list a { color: #84dbff; text-decoration: none; transition: 0.3s ease; }
+.contact-list a:hover { text-shadow: 0 0 5px #84dbff; }
+
+/*==============================================================================
+   4. Language Switcher (Optional)
+==============================================================================*/
+.lang-switcher {
+    display: flex; justify-content: center; gap: 10px;
+    margin-bottom: 40px;
+}
+
+.lang-btn {
+    background: transparent;
+    color: #b0c4de;
+    border: 1px solid #445566;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s ease;
+}
+
+.lang-btn:hover, .lang-btn.active {
+    background: rgba(132, 219, 255, 0.1);
+    color: #84dbff;
+    border-color: #84dbff;
+    box-shadow: 0 0 10px rgba(132, 219, 255, 0.3);
+}
+
+/*==============================================================================
+   5. Footer
+==============================================================================*/
+footer {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center; padding: 50px; font-size: 12px;
+    color: #546e7a; letter-spacing: 2px;
+    border-top: 1px solid #37474f;
+}
+/*==============================================================================
+   7. Responsive Media Queries (Mobile, Tablet, Laptop, PC - Fixed)
+==============================================================================*/
+
+/*--------------------------------------------------
+   A. PC & Large Screens (>= 1200px)
+   (உங்களது தற்போதைய CSS அப்படியே வேலை செய்யும்)
+---------------------------------------------------*/
+
+/*--------------------------------------------------
+   B. Laptop Screens (1024px to 1199px)
+---------------------------------------------------*/
+@media only screen and (max-width: 1199px) {
+    .about-container {
+        padding: 130px 40px 50px 40px; /* Space adjusted */
+        max-width: 1000px;
+    }
+
+    .about-title { font-size: 32px; }
+    .about-subtitle { font-size: 15px; }
+}
+
+/*--------------------------------------------------
+   C. Tablet Screens (768px to 1023px)
+---------------------------------------------------*/
+@media only screen and (max-width: 1023px) {
+    header { padding: 15px 30px; } /* Compact header */
+    .logo-text { font-size: 20px; }
+    nav ul { gap: 15px; }
+    nav ul li a { font-size: 12px; }
+
+    .about-container {
+        padding: 110px 20px 40px 20px; /* Space adjusted */
+        max-width: 800px;
+    }
+
+    .about-title { font-size: 28px; }
+    .about-subtitle { font-size: 14px; margin-bottom: 40px; }
+
+    /* முக்கிய மாற்றம்: 3 கார்டுகளும் 2 வரிசைகளாக மாறும் */
+    .about-grid {
+        flex-wrap: wrap; /* allow wrapping to new line */
+        gap: 20px;
+    }
+
+    .founder-card, .purpose-card { width: 48%; } /* 2 cards per row */
+    .services-card { width: 100%; margin-top: 10px; } /* 3rd card goes full width below */
+
+    .about-card, .about-full-card { padding: 25px; }
+    .about-card h2, .about-full-card h2 { font-size: 18px; margin-bottom: 15px; }
+    .about-card p, .about-full-card p { font-size: 14px; line-height: 1.6; }
+
+    .service-item { padding: 15px; }
+    .service-item .icon { font-size: 24px; }
+    .service-item h3 { font-size: 15px; }
+    .service-item p { font-size: 12px; }
+
+    footer { padding: 30px; }
+}
+
+/*--------------------------------------------------
+   D. Mobile Screens (< 768px)
+---------------------------------------------------*/
+@media only screen and (max-width: 767px) {
+    header {
+        padding: 10px 20px;
+        flex-direction: column; /* Stack logo and menu on mobile */
+        gap: 10px;
+    }
+    
+    .logo-text { font-size: 18px; text-align: center; margin-right: 0; }
+    nav ul { flex-wrap: wrap; justify-content: center; gap: 10px; }
+    nav ul li a { font-size: 11px; }
+
+    .about-container {
+        padding: 130px 15px 30px 15px; /* Adjust top padding for 2-line header */
+    }
+
+    .about-title { font-size: 24px; }
+    .about-subtitle { font-size: 13px; margin-bottom: 30px; }
+
+    /* முக்கிய மாற்றம்: அனைத்து கார்டுகளும் ஒரே வரிசையில் (Column-ஆக) மாறும் */
+    .about-grid {
+        flex-direction: column; /* stack vertically */
+        gap: 15px;
+    }
+
+    .founder-card, .purpose-card, .services-card { width: 100%; } /* full width cards */
+
+    .about-card, .about-full-card { padding: 20px; border-radius: 10px; }
+    .about-card h2, .about-full-card h2 { font-size: 16px; margin-bottom: 12px; }
+    .about-card p, .about-full-card p { font-size: 13px; line-height: 1.5; }
+
+    .service-item .icon { font-size: 20px; }
+    .service-item h3 { font-size: 14px; }
+    .service-item p { font-size: 11px; }
+
+    /* Language Switcher for mobile */
+    .lang-switcher { flex-wrap: wrap; gap: 5px; margin-bottom: 25px; }
+    .lang-btn { font-size: 11px; padding: 6px 15px; }
+
+    .contact-list li { font-size: 13px; }
+
+    footer { padding: 20px; font-size: 10px; letter-spacing: 1px; }
+}

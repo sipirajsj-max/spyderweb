@@ -1,0 +1,331 @@
+/*==============================================================================
+    SPYDER WEB - PREMIUM CONTACT STYLES
+==============================================================================*/
+
+/* --- Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #ffffff url('/IMAGES/spder.png') no-repeat center center;
+    background-attachment: fixed;
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden; /* Mobile-la side scroll varaama erukka */
+    filter: contrast(1.1) brightness(1.1);
+}
+
+.main-container {
+    background: rgba(1, 21, 25, 0.4); /* Background clear-ah theriyattum nu 0.4 kuduthuruken */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 100px 40px 40px 40px;
+}
+
+/* --- Navbar (Laptop View) --- */
+.navbar {
+    background-color: #011a21;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: fixed; /* Scroll pannaalum mela irukkum */
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #a0cbd3;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    font-size: 0.8rem;
+    color: #a0cbd3;
+}
+
+.nav-links li {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-links li:hover, .nav-links li.active {
+    color: #00d4ff;
+    border-bottom: 2px solid #00d4ff;
+}
+
+/* Language Switcher */
+.lang-switcher {
+    display: flex;
+    gap: 8px;
+    margin-left: 20px;
+}
+
+.lang-switcher button {
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid #00d4ff;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 11px;
+    transition: 0.3s;
+}
+
+.lang-switcher button:hover {
+    background: #00d4ff;
+    color: #000;
+}
+/* 1. Main Wrapper - இன்னும் பிரகாசமான தலைப்புக்காக */
+.contact-wrapper {
+    padding: 150px 20px 80px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.metallic-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 45px;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(132, 219, 255, 0.6);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #84dbff;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+    opacity: 0.8;
+}
+
+/* 2. Contact Grid Layout */
+.contact-grid {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+    perspective: 1000px; /* For subtle 3D feel */
+}
+
+/* 3. Info Boxes - Glassmorphism Style */
+.contact-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-box {
+    background: rgba(255, 255, 255, 0.03); /* Transparent background */
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(132, 219, 255, 0.1);
+    backdrop-filter: blur(10px); /* Blur effect */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(132, 219, 255, 0.05), transparent);
+    transition: 0.5s;
+}
+
+.info-box:hover::before {
+    left: 100%;
+}
+
+.info-box:hover {
+    border-color: #84dbff;
+    box-shadow: 0 0 25px rgba(132, 219, 255, 0.2);
+    transform: translateY(-10px) scale(1.02);
+    background: rgba(132, 219, 255, 0.05);
+}
+
+.info-box i {
+    font-size: 28px;
+    color: #84dbff;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px #84dbff;
+}
+
+.info-box h3 {
+    color: #ffffff;
+    margin-bottom: 8px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+}
+
+.info-box p {
+    color: #b0c4de;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* 4. Form Styling - Futuristic Look */
+.contact-form-container {
+    flex: 1.5;
+    background: rgba(15, 25, 35, 0.85);
+    padding: 50px;
+    border-radius: 25px;
+    border: 1px solid rgba(132, 219, 255, 0.2);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 18px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 15px;
+    transition: 0.3s;
+    outline: none;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+    border-color: #84dbff;
+    background: rgba(132, 219, 255, 0.05);
+    box-shadow: 0 0 15px rgba(132, 219, 255, 0.1);
+}
+
+/* 5. Button Style - Glowing Neon */
+.btn-primary {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(45deg, #1565c0, #84dbff);
+    border: none;
+    border-radius: 12px;
+    color: #000;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.4s;
+    text-transform: uppercase;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 30px #84dbff;
+    transform: scale(1.02);
+    letter-spacing: 4px;
+}
+/* --- Bottom Bar --- */
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(1, 26, 33, 0.9);
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    font-size: 0.75rem;
+    color: #a0cbd3;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons i {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.social-icons i:hover {
+    color: #00d4ff;
+}
+a{
+    text-decoration: none;
+    color: rgb(143, 178, 186);
+}
+a {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+a:hover, .nav-links li.active {
+    color: #00d4ff;
+    border-bottom: 2px solid #00d4ff;
+}
+/*==============================================================================
+    RESPONSIVE DESIGN (PC, Tablet, Mobile)
+==============================================================================*/
+
+/* Tablet Screens */
+@media only screen and (max-width: 1024px) {
+    .contact-grid { gap: 30px; }
+    .contact-form-container { padding: 35px; }
+}
+
+/* Mobile Screens */
+@media only screen and (max-width: 767px) {
+    .contact-wrapper { padding: 120px 15px 40px; }
+    .metallic-text { font-size: 32px; }
+    
+    .contact-grid {
+        flex-direction: column;
+    }
+
+    .contact-form-container {
+        order: 1; /* Form stays on top for mobile users */
+        padding: 30px 20px;
+    }
+
+    .contact-info {
+        order: 2;
+        width: 100%;
+    }
+
+    .info-box {
+        text-align: center;
+        padding: 25px;
+    }
+
+    .info-box:hover {
+        transform: translateY(-5px); /* Less movement on mobile */
+    }
+}
