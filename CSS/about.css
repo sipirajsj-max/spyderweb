@@ -5,7 +5,7 @@
 
 body {
     background-color: #fdfeff ;
-    background-image: url('/IMAGES/spder.png'); /* Check path: images/imgbg.png */
+    background-image: url('../IMAGES/spder.png'); /* Check path: images/imgbg.png */
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -61,6 +61,10 @@ nav ul li a:hover, nav ul li a.active-nav {
     border-bottom: 2px solid #84dbff;
 }
 
+/*remove heading underline*/
+a {
+	text-decoration: none;
+}
 /*==============================================================================
    3. Main About Us Area & Content Sections
 ==============================================================================*/

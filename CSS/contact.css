@@ -11,7 +11,7 @@
 }
 
 body {
-    background: #ffffff url('/IMAGES/spder.png') no-repeat center center;
+    background: #ffffff url('../IMAGES/spder.png') no-repeat center center;
     background-attachment: fixed;
     color: white;
     min-height: 100vh;
